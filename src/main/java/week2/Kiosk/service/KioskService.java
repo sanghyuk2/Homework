@@ -63,4 +63,8 @@ public class KioskService {
         }
         return Arrays.asList(str);
     }
+
+    public List<Item> viewCartList() {
+        return kioskRepository.getCart();
+    }
 }
