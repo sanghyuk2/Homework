@@ -24,4 +24,10 @@ public class OutputView {
             System.out.println();
         }
     }
+
+    public void printCartList(List<Item> items) {
+        for (Item item : items) {
+            System.out.println(item.toString());
+        }
+    }
 }
