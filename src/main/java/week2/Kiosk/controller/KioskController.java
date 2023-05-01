@@ -36,7 +36,7 @@ public class KioskController {
 
     // 상품을 등록하는 API 구현하시오
     public void upload() {
-
+        kioskService.uploadProduct(inputView.readProductInfo());
     }
 
     // 등록된 상품을 카테고리별로 출력해주는 API를 구현하시오
