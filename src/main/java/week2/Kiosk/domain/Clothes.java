@@ -1,5 +1,8 @@
 package week2.Kiosk.domain;
 
+import lombok.Getter;
+
+@Getter
 public class Clothes extends Item {
     private int price;
 
