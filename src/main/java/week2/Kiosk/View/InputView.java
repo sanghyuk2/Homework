@@ -16,4 +16,16 @@ public class InputView {
         String command = sc.nextLine().toUpperCase();
         return new CommandDto(command);
     }
+
+    public String readProductInfo() {
+        Print.categoryType();
+
+        return sc.next();
+    }
+
+    public String readCustomerProduct() {
+        Print.intoCartItem();
+
+        return sc.next();
+    }
 }
