@@ -22,4 +22,10 @@ public class InputView {
 
         return sc.next();
     }
+
+    public String readCustomerProduct() {
+        Print.intoCartItem();
+
+        return sc.next();
+    }
 }
