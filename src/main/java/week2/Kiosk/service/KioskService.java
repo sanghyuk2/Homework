@@ -4,6 +4,9 @@ import week2.Kiosk.Util.Validator;
 import week2.Kiosk.domain.*;
 import week2.Kiosk.repository.KioskRepository;
 
+import java.util.List;
+import java.util.Map;
+
 import static week2.Kiosk.domain.Category.*;
 
 public class KioskService {
@@ -36,5 +39,9 @@ public class KioskService {
         }
 
         kioskRepository.upload(Category.from(infoArr[0]), item);
+    }
+
+    public Map<Category, List<Item>> viewItems() {
+        return kioskRepository.view();
     }
 }
