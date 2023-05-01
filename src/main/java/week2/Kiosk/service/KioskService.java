@@ -4,8 +4,10 @@ import week2.Kiosk.Util.Validator;
 import week2.Kiosk.domain.*;
 import week2.Kiosk.repository.KioskRepository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static week2.Kiosk.domain.Category.*;
 
@@ -43,5 +45,22 @@ public class KioskService {
 
     public Map<Category, List<Item>> viewItems() {
         return kioskRepository.view();
+    }
+
+    public void intoCart(String str) {
+        List<String> orderList = separateByCategory(str);
+
+        for (String order : orderList) {
+            String[] split = order.split(",");
+            kioskRepository.add(Category.from(split[0]), split[1]);
+        }
+    }
+
+    private List<String> separateByCategory(String str) {
+        if (str.contains("|")) {
+            String[] split = str.split("\\|");
+            return Arrays.stream(split).collect(Collectors.toList());
+        }
+        return Arrays.asList(str);
     }
 }
