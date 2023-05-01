@@ -22,9 +22,7 @@ public class KioskRepository {
     }
 
     public void upload(Category category, Item item) {
-        List<Item> temp = new ArrayList<>();
-        temp.add(item);
-        repo.put(category, temp);
+        repo.get(category).add(item);
     }
 
     public Map<Category, List<Item>> view() {
