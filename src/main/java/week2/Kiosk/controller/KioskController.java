@@ -59,7 +59,7 @@ public class KioskController {
     // 장바구니에 있는 상품 전체들을 결제하기 위해 얼마가 필요한지 알려주는 API 기능을 구현하시오.
     // 결과를 알려준 후 프로그램 종료합니다.
     public void payed() {
-
+        outputView.printTotal(kioskService.totalPrice());
     }
 
     public Command readCommand() {
