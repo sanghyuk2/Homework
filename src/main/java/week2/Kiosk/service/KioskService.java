@@ -67,4 +67,41 @@ public class KioskService {
     public List<Item> viewCartList() {
         return kioskRepository.getCart();
     }
+
+    public int totalPrice() {
+        int totalAmt = 0;
+
+        List<Item> cart = kioskRepository.getCart();
+
+        for (Item item : cart) {
+            Category category = getItemCategory(item);
+            totalAmt += getItemPrice(category, item);
+        }
+
+        return totalAmt;
+    }
+
+    private int getItemPrice(Category category, Item item) {
+        switch (category) {
+            case BAG:
+                return ((Bag) item).getPrice();
+            case BEVERAGE:
+                return ((Beverage) item).getPrice();
+            case CLOTHES:
+                return ((Clothes) item).getPrice();
+            case FOOD:
+                return ((Food) item).getPrice();
+        }
+        return 0;
+    }
+
+    private Category getItemCategory(Item item) {
+        Map<Category, List<Item>> repo = kioskRepository.getRepo();
+        for (Category category : repo.keySet()) {
+            if (repo.get(category).contains(item)) {
+                return category;
+            }
+        }
+        return null;
+    }
 }
