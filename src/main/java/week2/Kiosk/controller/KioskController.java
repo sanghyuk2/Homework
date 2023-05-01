@@ -48,7 +48,7 @@ public class KioskController {
 
     // 상품을 장바구니에 넣는 API 기능을 구현하시오
     public void intoCart() {
-
+        kioskService.intoCart(inputView.readCustomerProduct());
     }
 
     // 현재 장바구니에 들어있는 상품들을 보여주는 API 기능을 구현하시오.
