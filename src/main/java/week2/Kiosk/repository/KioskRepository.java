@@ -26,4 +26,8 @@ public class KioskRepository {
         temp.add(item);
         repo.put(category, temp);
     }
+
+    public Map<Category, List<Item>> view() {
+        return repo;
+    }
 }
