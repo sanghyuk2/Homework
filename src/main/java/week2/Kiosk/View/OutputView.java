@@ -34,4 +34,8 @@ public class OutputView {
     public void printTotal(int totalPrice) {
         System.out.println("장바구니 총 금액은 " + totalPrice);
     }
+
+    public void printExceptionMessage(String message) {
+        System.out.println(message);
+    }
 }

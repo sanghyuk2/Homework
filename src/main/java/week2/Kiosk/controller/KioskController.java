@@ -31,6 +31,7 @@ public class KioskController {
             try {
                 service.get(command).run();
             } catch (IllegalArgumentException e) {
+                outputView.printExceptionMessage(e.getMessage());
             }
             command = readCommand();
         }
