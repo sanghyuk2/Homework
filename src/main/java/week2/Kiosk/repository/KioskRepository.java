@@ -21,4 +21,9 @@ public class KioskRepository {
         repo.put(Category.BAG, new ArrayList<>());
     }
 
+    public void upload(Category category, Item item) {
+        List<Item> temp = new ArrayList<>();
+        temp.add(item);
+        repo.put(category, temp);
+    }
 }
